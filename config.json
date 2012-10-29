@@ -1,9 +1,13 @@
 {
   "locals": {
-    "url": "jnwng.com",
+    "url": "/",
     "name": "Jon Wong",
     "owner": "Jon Wong",
     "description": "Computer Science major at the University of California, San Diego",
     "index_articles": 3
-  }
+  },
+  "plugins": [
+    "/usr/local/lib/node_modules/wintersmith-stylus/"
+  ]
 }
+

@@ -3,12 +3,12 @@ extends layout
 block content
   include author
   //- underscore helps us filter and sort our articles
-  - var articles = _.chain(contents.articles).map(function(item) {
+  - var blog = _.chain(contents.blog).map(function(item) {
   -   return item
   - }).compact().sortBy(function(item) { 
   -   return -item.date
   - }).first(5).value() 
-  each article in articles
+  each article in blog
     article.post
       header
         h2

@@ -4,14 +4,7 @@ extends layout
 block prepend title
   #{ page.title } -
 
-block header
-  include author
-  a.back(href='/') << back to index
-  h1= page.title
-  p
-    | written by:
-    mixin author(page.metadata.author)
-
 block content
+  h1= page.title
   article.post
     section.content!= page.html
