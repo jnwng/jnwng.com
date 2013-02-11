@@ -1,7 +1,9 @@
+---
 title: WHWN, dotCloud, and the Wonder that is PyCon
 author: Jon-Wong
 date: 2012-5-30 15:38
 template: article.jade
+---
 
 _Reposted from the blog of [We Have, We Need](http://whwn.tumblr.com/post/24088813272/whwn-dotcloud-and-the-wonder-that-is-pycon)_
 

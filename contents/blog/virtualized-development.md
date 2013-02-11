@@ -1,7 +1,9 @@
+---
 title: Virtualized Development in the Time of Cholera
 author: Jon-Wong
 date: 2012-5-30 15:38
 template: article.jade
+---
 
 _Reposted from the blog of [We Have, We Need](http://whwn.tumblr.com/post/24088816666/virtualized-development)_
 

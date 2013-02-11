@@ -9,13 +9,19 @@ html(lang='en')
       link(rel='stylesheet', href='/css/main.css')
       link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=PT+Serif')
   body
-    header
+    header#top
       div.inner
         block header
           h1
             a(href=locals.url)= locals.name
-          p= locals.description 
-          h4 (pardon the dust, i'm still working on the site)
+          nav
+            ul
+              li
+                a(href='http://blog.jnwng.com') blog
+              li
+                a projects
+              li
+                a about me
     div#content
       block content
         h2 Welcome to zombocom!

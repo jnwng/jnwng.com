@@ -1,7 +1,9 @@
+---
 title: The Beginning of We Have, We Need
 author: Jon-Wong
 date: 2012-5-28 15:38
 template: article.jade
+---
 
 _Reposted from the blog of [We Have, We Need](http://whwn.tumblr.com/post/22755371255/the-beginning-of-we-have-we-need)_
 
