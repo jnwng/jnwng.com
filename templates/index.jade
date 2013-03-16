@@ -1,20 +1,9 @@
 extends layout
 
 block content
-  include author
-  //- underscore helps us filter and sort our articles
-  - var blog = _.chain(contents.blog).map(function(item) {
-  -   return item
-  - }).compact().sortBy(function(item) { 
-  -   return -item.date
-  - }).first(5).value() 
-  each article in blog
-    article.post
-      header
-        h2
-          a(href=article.url)= article.title
-      section.content!= article.intro
-      if article.hasMore
-        p.read-more
-          a(href=article.url) read more
-  a(href='archive.html')#archive Visit the archives!
+  p
+    :markdown
+      Hello there! My name is Jon Wong and I'm a fourth-year
+      undergraduate at the University of California, San Diego.
+      I'm a huge Warriors fan, as well as a software developer.
+      Check out my blog for some of my more recent developments!

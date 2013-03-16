@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>
+      <Virtualized Development in the Time of Cholera>-</Virtualized Development in the Time of Cholera>Jon Wong
+    </title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif">
+  </head>
+  <body>
+    <header id="top">
+      <div class="inner">
+        <h1><a href="/">Jon Wong</a></h1>
+        <nav>
+          <ul>
+            <li><a href="/blog">blog</a></li>
+            <li><a href="/projects">projects</a></li>
+            <li><a href="/about-me">about me</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div id="content">
+      <h1>Virtualized Development in the Time of Cholera</h1>
+      <article class="post">
+        <section class="content"><p><em>Reposted from the blog of <a href="http://whwn.tumblr.com/post/24088816666/virtualized-development">We Have, We Need</a></em>
+
+</p>
+<p>Here at <strong><a href="http://www.wehave-weneed.org">We Have, We Need</a></strong>, we have a very unique development situation. As students here at the University of California, San Diego, we are expected to do great things in ten week spans; not coincidentally that is the length of our team&apos;s developer turn over. It&apos;s hard to find good advice on how to address this shortcoming as it is not a commonplace occurrence in industry and we are neither employees nor volunteers, but somewhere in between.
+
+</p>
+<p>The biggest hurdle over the last three quarters has most definitely been local server deployments. With people joining our team from all different skill levels and backgrounds, as well as wildly varying personal machines and operating systems, asking team members to provision and setup their own machines is a risky, error-prone, and time-consuming task. Additionally, since we deploy and run our code on <strong><a href="http://www.dotcloud.com">dotCloud</a></strong>, the code running on our local machines isn&apos;t guaranteed to work the same as it will on the production servers.
+
+</p>
+<p>To address this issue, we looked into <strong><a href="http://www.vagrantup.com">Vagrant</a></strong> (and <a href="http://www.virtualbox.org">VirtualBox</a>). After examining our production server packages and libraries, we set up and packaged an Ubuntu 10.04 box that almost exactly matched our production setup (minus nginx and some other more obscure server management libraries). We have both 32- and 64-bit provisioned boxes; we found that while our production servers ran 64-bit systems, a few of our team&apos;s machines either were 32-bit or had no support for virtualizing 64-bit guest systems. The rest of our stack, essentially just MongoDB and Django + Python 2.7, are installed and set to run on start. 
+
+</p>
+<p>Since we have both Linux and Windows specific Vagrant configuration files, each team member copies the one they need and runs <code>vagrant up</code>. Our Vagrant configuration is set to share our local files from our code repository. We share local folders for a couple of reasons:
+
+</p>
+<ol>
+<li>Not all of our developers are very comfortable working at the command line. GUI tools and editors are still quite useful to everyone, so being able to work locally instead of over ssh is very helpful. </li>
+<li>We have found that the speed decrease is really not that noticeable compared to developing locally, and although we haven&apos;t measured it the guys at Vagrant have put down some numbers: <a href="http://vagrantup.com/docs/nfs.html">File sharing benchmark at Vagrant</a></li>
+</ol>
+<p>In combination with <strong><a href="http://www.fabfile.org">Fabric</a></strong>, a quick and easy deployment tool, new developers don&apos;t need to know the intricacies of managing all of our services on whatever platform they are on. A simple run of <code>fab bootstrap serve</code> will suitably provision and prepare their virtual machine to serve connections over their localhost. They can access the site via their browser and changes are near instanteous (if there are no bugs!) 
+
+</p>
+<p>Vagrant, along with VirtualBox and Fabric, have really streamlined our development set up. Regardless of operating system or machine specifications, new team members are up and running in a quarter of the time. When you only have ten weeks to achieve your goal of helping the fight against cholera, that time is essential.
+
+</p>
+<p>Jon (<a href="http://twitter.com/jnwng">@jnwng</a>)
+
+</p>
+<p><em>we&apos;re building a service that connects NGOs and humanitarians in disaster zones via SMS, email, and the web. have some ideas or feedback? send us an email at feedback@wehave-weneed.org</em>
+</p>
+</section>
+      </article>
+    </div>
+    <footer>
+      <div class="inner">
+        <p>&copy; 2013 Jon Wong</p>
+      </div>
+    </footer>
+  </body>
+</html>

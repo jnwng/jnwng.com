@@ -17,14 +17,15 @@ html(lang='en')
           nav
             ul
               li
-                a(href='http://blog.jnwng.com') blog
+                a(href="/") home
               li
-                a projects
+                a(href='/blog/') blog
               li
-                a about me
+                a(href="/projects/") projects
+              li
+                a(href="/about-me/") about me
     div#content
       block content
-        h2 Welcome to zombocom!
     footer
       div.inner
         block footer

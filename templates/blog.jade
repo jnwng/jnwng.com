@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  include author
+  //- underscore helps us filter and sort our articles
+  - var blog = _.chain(contents.blog).filter(function(item) {
+  -   return item._filename.split('.').pop() == "md"
+  - }).compact().sortBy(function(item) { 
+  -   return -item.date
+  - }).first(5).value() 
+  each article in blog
+    article.post
+      header
+        h4
+          a(href=article.url)= article.title
